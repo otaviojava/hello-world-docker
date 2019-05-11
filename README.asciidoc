@@ -1,0 +1,67 @@
+== Hello World with Docker
+
+
+[source,bash]
+----
+ mvn clean package
+ java -cp target/docker-1.0-SNAPSHOT.jar org.soujava.App
+----
+
+
+[source,bash]
+----
+docker container run -it openjdk:8
+root@bd2947d4d562:/# java -version
+openjdk version "1.8.0_212"
+OpenJDK Runtime Environment (build 1.8.0_212-8u212-b01-1~deb9u1-b01)
+OpenJDK 64-Bit Server VM (build 25.212-b01, mixed mode)
+root@bd2947d4d562:/# exit
+exit
+----
+
+
+Create a new Dockerfile and use the following content:
+
+[source,Dockerfile]
+----
+FROM openjdk:8
+COPY target/docker-1.0-SNAPSHOT.jar /usr/src/docker-1.0-SNAPSHOT.jar
+CMD java -cp /usr/src/docker-1.0-SNAPSHOT.jar  org.soujava.App
+----
+
+
+Build the image:
+
+[source,bash]
+----
+docker image build -t hello-java:latest .
+----
+
+Run the image:
+
+[source,bash]
+----
+docker container run hello-java:latest
+----
+
+Set the maven plugin:
+
+[source,bash]
+----
+mvn  package -Pdocker
+----
+
+
+Docker images can be saved using image save command to a .tar file:
+
+[source,bash]
+----
+docker image save helloworld > helloworld.tar
+----
+
+These tar files can then be imported using load command:
+
+[source,bash]
+----
+docker image load -i helloworld.tar
+----
