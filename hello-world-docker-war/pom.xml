@@ -38,8 +38,7 @@
                 <version>${docker.plugin.version}</version>
                 <configuration>
                     <imageName>hello-world-java</imageName>
-                    <baseImage>openjdk:8</baseImage>
-                    <entryPoint>["java", "-jar", "/${project.build.finalName}.jar"]</entryPoint>
+                    <baseImage>tomee:latest</baseImage>
                     <forceTags>true</forceTags>
                     <imageTags>
                         <imageTag>${project.version}</imageTag>
@@ -47,9 +46,9 @@
                     </imageTags>
                     <resources>
                         <resource>
-                            <targetPath>/</targetPath>
+                            <targetPath>/usr/local/tomee/webapps/</targetPath>
                             <directory>${project.build.directory}</directory>
-                            <include>${project.build.finalName}.jar</include>
+                            <include>${project.build.finalName}.war</include>
                         </resource>
                     </resources>
                 </configuration>
