@@ -18,7 +18,7 @@
         <junit.version>5.4.2</junit.version>
         <maven.compile.version>3.8.0</maven.compile.version>
         <maven.surefire.plugin.version>2.22.1</maven.surefire.plugin.version>
-        <docker.plugin.version>0.30.0</docker.plugin.version>
+        <docker.plugin.version>1.2.0</docker.plugin.version>
         <maven.jar.plugin.version>3.1.1</maven.jar.plugin.version>
     </properties>
 
@@ -54,23 +54,13 @@
                     <source>${maven.compiler.source}</source>
                 </configuration>
             </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jar-plugin</artifactId>
-                <version>${maven.jar.plugin.version}</version>
-                <configuration>
-                    <archive>
-                        <manifest>
-                            <mainClass>org.soujava.App</mainClass>
-                        </manifest>
-                    </archive>
-                </configuration>
-            </plugin>
         </plugins>
     </build>
 
-  <modules>
+    <modules>
         <module>hello-world-docker</module>
-   </modules>
+        <module>hello-world-docker-plugin</module>
+        <module>hello-world-docker-war</module>
+    </modules>
 
 </project>
