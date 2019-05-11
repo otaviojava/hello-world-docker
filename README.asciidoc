@@ -1,10 +1,11 @@
 == Hello World with Docker
 
 
+
 [source,bash]
 ----
  mvn clean package
- java -cp target/docker-1.0-SNAPSHOT.jar org.soujava.App
+ java -cp target/hello-world-docker-1.0-SNAPSHOT.jar org.soujava.App
 ----
 
 
@@ -41,7 +42,7 @@ Run the image:
 
 [source,bash]
 ----
-docker container run hello-java:latest
+docker container run hello-world-java:latest
 ----
 
 Set the maven plugin:
