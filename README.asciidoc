@@ -52,7 +52,7 @@ Set the maven plugin:
 mvn clean package docker:build
 ----
 
-
+== Docker War
 
 Run the image:
 
@@ -67,6 +67,10 @@ To Test:
 ----
 curl -X GET http://localhost:8080/hello-world/resource/hello
 ----
+
+
+== Docker Uber Jar
+
 
 
 == Docker Compose

@@ -11,10 +11,7 @@
     </parent>
 
     <artifactId>hello-world-docker-uber-jar</artifactId>
-    <packaging>jar</packaging>
-    <properties>
-        <tomee.version>8.0.0-M2-TT1</tomee.version>
-    </properties>
+    <packaging>war</packaging>
 
     <dependencies>
         <dependency>
@@ -26,8 +23,12 @@
     </dependencies>
 
     <build>
-        <finalName>hello-world</finalName>
         <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>3.1.0</version>
+            </plugin>
             <plugin>
                 <groupId>com.spotify</groupId>
                 <artifactId>docker-maven-plugin</artifactId>
@@ -35,7 +36,7 @@
                 <configuration>
                     <imageName>hello-world-java</imageName>
                     <baseImage>openjdk:8</baseImage>
-                    <entryPoint>["java", "-jar", "/${project.build.finalName}.jar"]</entryPoint>
+                    <entryPoint>["java", "-jar", "/${project.build.finalName}-exec.jar"]</entryPoint>
                     <forceTags>true</forceTags>
                     <imageTags>
                         <imageTag>${project.version}</imageTag>

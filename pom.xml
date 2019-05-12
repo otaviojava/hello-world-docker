@@ -20,6 +20,7 @@
         <maven.surefire.plugin.version>2.22.1</maven.surefire.plugin.version>
         <docker.plugin.version>1.2.0</docker.plugin.version>
         <maven.jar.plugin.version>3.1.1</maven.jar.plugin.version>
+        <tomee.version>8.0.0-M2</tomee.version>
     </properties>
 
     <dependencies>
