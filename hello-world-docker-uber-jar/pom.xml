@@ -35,7 +35,7 @@
                 <artifactId>docker-maven-plugin</artifactId>
                 <version>${docker.plugin.version}</version>
                 <configuration>
-                    <imageName>hello-world-uber-java</imageName>
+                    <imageName>hello-world-uber-jar</imageName>
                     <baseImage>openjdk:8</baseImage>
                     <entryPoint>["java", "-jar", "/${project.build.finalName}-exec.jar"]</entryPoint>
                     <forceTags>true</forceTags>
