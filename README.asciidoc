@@ -60,3 +60,34 @@ Run the image:
 ----
 docker container run -p 8080:8080 -e JAVA_OPTS='-Xmx100m' hello-world-java-war
 ----
+
+To Test:
+
+[source,bash]
+----
+curl -X GET http://localhost:8080/hello-world/resource/hello
+----
+
+
+== Docker Compose
+
+Server Up
+
+[source,bash]
+----
+docker-compose up -d
+----
+
+Test it:
+
+[source,bash]
+----
+curl -X GET http://localhost/hello-world/resource/hello
+----
+
+Server Down
+
+[source,bash]
+----
+docker-compose down
+----

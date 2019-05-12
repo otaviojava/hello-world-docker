@@ -4,7 +4,7 @@ version:  '3.2'
 services:
 
   server-1:
-    image: "hello-world-java-war"
+    image: "hello-world-java-uber-jar"
     networks:
       - docker-java
     ports:
@@ -13,7 +13,7 @@ services:
       - JAVA_OPTS='-Xmx100m'
 
   server-2:
-    image: "hello-world-java-war"
+    image: "hello-world-java-uber-jar"
     networks:
       - docker-java
     ports:
@@ -22,7 +22,7 @@ services:
       - JAVA_OPTS='-Xmx100m'
 
   server-3:
-    image: "hello-world-java-war"
+    image: "hello-world-java-uber-jar"
     networks:
       - docker-java
     ports:
