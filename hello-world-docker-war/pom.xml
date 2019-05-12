@@ -37,7 +37,7 @@
                 <artifactId>docker-maven-plugin</artifactId>
                 <version>${docker.plugin.version}</version>
                 <configuration>
-                    <imageName>hello-world-java</imageName>
+                    <imageName>hello-world-java-war</imageName>
                     <baseImage>tomee:latest</baseImage>
                     <forceTags>true</forceTags>
                     <imageTags>

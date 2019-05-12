@@ -49,20 +49,14 @@ Set the maven plugin:
 
 [source,bash]
 ----
-mvn  package -Pdocker
+mvn clean package docker:build
 ----
 
 
-Docker images can be saved using image save command to a .tar file:
+
+Run the image:
 
 [source,bash]
 ----
-docker image save helloworld > helloworld.tar
-----
-
-These tar files can then be imported using load command:
-
-[source,bash]
-----
-docker image load -i helloworld.tar
+docker container run -p 8080:8080 -e JAVA_OPTS='-Xmx100m' hello-world-java-war
 ----
