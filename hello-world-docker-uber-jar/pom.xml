@@ -23,6 +23,7 @@
     </dependencies>
 
     <build>
+        <finalName>hello-world</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -34,7 +35,7 @@
                 <artifactId>docker-maven-plugin</artifactId>
                 <version>${docker.plugin.version}</version>
                 <configuration>
-                    <imageName>hello-world-java</imageName>
+                    <imageName>hello-world-uber-java</imageName>
                     <baseImage>openjdk:8</baseImage>
                     <entryPoint>["java", "-jar", "/${project.build.finalName}-exec.jar"]</entryPoint>
                     <forceTags>true</forceTags>
@@ -46,7 +47,7 @@
                         <resource>
                             <targetPath>/</targetPath>
                             <directory>${project.build.directory}</directory>
-                            <include>${project.build.finalName}.jar</include>
+                            <include>${project.build.finalName}-exec.jar</include>
                         </resource>
                     </resources>
                 </configuration>
