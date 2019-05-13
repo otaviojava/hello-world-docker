@@ -27,7 +27,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>org.soujava.App</mainClass>
+                            <mainClass>org.soujava.docker.App</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
