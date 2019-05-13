@@ -1,4 +1,4 @@
-package org.soujava;
+package org.soujava.docker;
 
 /**
  * Hello world!

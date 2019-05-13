@@ -1,4 +1,4 @@
-package org.soujava;
+package org.soujava.docker;
 
 
 import org.junit.jupiter.api.Test;
