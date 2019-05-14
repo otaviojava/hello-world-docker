@@ -5,7 +5,7 @@
 [source,bash]
 ----
  mvn clean package
- java -cp target/hello-world-docker-1.0-SNAPSHOT.jar org.soujava.App
+ java -cp target/hello-world-docker-1.0-SNAPSHOT.jar App
 ----
 
 
@@ -27,7 +27,7 @@ Create a new Dockerfile and use the following content:
 ----
 FROM openjdk:8
 COPY target/docker-1.0-SNAPSHOT.jar /usr/src/docker-1.0-SNAPSHOT.jar
-CMD java -cp /usr/src/docker-1.0-SNAPSHOT.jar  org.soujava.App
+CMD java -cp /usr/src/docker-1.0-SNAPSHOT.jar  App
 ----
 
 
@@ -35,14 +35,14 @@ Build the image:
 
 [source,bash]
 ----
-docker image build -t hello-java:latest .
+docker image build -t hello-world-docker-java:latest .
 ----
 
 Run the image:
 
 [source,bash]
 ----
-docker container run hello-world-java:latest
+docker container run hello-world-docker-java:latest
 ----
 
 Set the maven plugin:
@@ -53,6 +53,13 @@ mvn clean package docker:build
 ----
 
 == Docker War
+
+Set the maven plugin:
+
+[source,bash]
+----
+mvn clean package docker:build
+----
 
 Run the image:
 
@@ -71,6 +78,23 @@ curl -X GET http://localhost:8080/hello-world/resource/hello
 
 == Docker Uber Jar
 
+
+[source,bash]
+----
+mvn clean install tomee:exec docker:build
+----
+
+[source,bash]
+----
+docker container run -p 8080:8080 -e JAVA_OPTS='-Xmx100m' hello-world-uber-jar
+----
+
+To Test:
+
+[source,bash]
+----
+curl -X GET http://localhost:8080/hello-world/resource/hello
+----
 
 
 == Docker Compose

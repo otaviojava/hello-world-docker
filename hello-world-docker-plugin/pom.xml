@@ -27,7 +27,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>App</mainClass>
+                            <mainClass>org.soujava.docker.App</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
@@ -37,7 +37,7 @@
                 <artifactId>docker-maven-plugin</artifactId>
                 <version>${docker.plugin.version}</version>
                 <configuration>
-                    <imageName>hello-world-java</imageName>
+                    <imageName>hello-world-docker-java-plugin</imageName>
                     <baseImage>openjdk:8</baseImage>
                     <entryPoint>["java", "-jar", "/${project.build.finalName}.jar"]</entryPoint>
                     <forceTags>true</forceTags>
