@@ -11,7 +11,7 @@ import java.net.UnknownHostException;
 @Path("hello")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
-public class EnvironmentResource {
+public class HelloWorldResource {
 
 
     @GET
