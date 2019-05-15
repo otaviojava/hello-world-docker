@@ -62,6 +62,8 @@
         <module>hello-world-docker</module>
         <module>hello-world-docker-plugin</module>
         <module>hello-world-docker-war</module>
+        <module>hello-world-docker-uber-jar</module>
+        <module>hello-world-test-docker</module>
     </modules>
 
 </project>
